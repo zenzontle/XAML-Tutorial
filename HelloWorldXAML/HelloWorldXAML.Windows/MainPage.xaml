@@ -28,6 +28,13 @@
             <Setter Property="Foreground" Value="Green"/>
         </Style>
     </Page.Resources>
+    <Page.TopAppBar>
+        <CommandBar>
+            <AppBarButton Icon="Accept" Label="AppBarButton"/>
+            <AppBarButton Icon="Cancel" Label="AppBarButton"/>
+            <AppBarButton Icon="Pictures" Label="Pictures" Click="PhotoPageButton_Click"/>
+        </CommandBar>
+    </Page.TopAppBar>
 
     <!--
         This grid acts as a root panel for the page that defines two rows:
@@ -61,10 +68,10 @@
                         IsHitTestVisible="false" TextWrapping="NoWrap" VerticalAlignment="Bottom" Margin="0,0,30,40"/>
         </Grid>
         <StackPanel Grid.Row="1" Margin="120,30,0,0">
-            <TextBlock Text="What's your name?" Style="{StaticResource BaseTextBlockStyle}"></TextBlock>
+            <TextBlock Text="What's your name?" Style="{StaticResource BaseTextBlockStyle}"/>
             <StackPanel Orientation="Horizontal" Margin="0,20,0,20">
-                <TextBox x:Name="nameInput" Width="300" HorizontalAlignment="Left" TextChanged="NameInput_TextChanged"></TextBox>
-                <Button Content="Say &quot;Hello&quot;" Click="Button_Click"></Button>
+                <TextBox x:Name="nameInput" Width="300" HorizontalAlignment="Left" TextChanged="NameInput_TextChanged"/>
+                <Button x:Name="helloButton" Content="Say &quot;Hello&quot;" Click="Button_Click"></Button>
             </StackPanel>
             <TextBlock x:Name="greetingOutput" Style="{StaticResource BigGreenTextStyle}"></TextBlock>
         </StackPanel>
